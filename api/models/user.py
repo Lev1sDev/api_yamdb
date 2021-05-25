@@ -1,4 +1,4 @@
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 
 
@@ -17,7 +17,7 @@ class User(AbstractUser):
         default=Role.USER
     )
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["role", ]
+    REQUIRED_FIELDS = ["username","role", ]
 
     class Meta:
         verbose_name = 'Пользователь'
